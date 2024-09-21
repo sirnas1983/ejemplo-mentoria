@@ -9,6 +9,7 @@ class Posts(models.Model):
     fecha_publicacion = models.DateTimeField(default=timezone.now)
     fecha_modificacion = models.DateTimeField(null=True)
     publicado = models.BooleanField(default=True)
+    imagen = models.ImageField(upload_to='posts/', default='../static/default.png', null=True, blank=True)
 
     def __str__(self):
         return self.titulo
