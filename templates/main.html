@@ -1,0 +1,22 @@
+{% extends 'inicio.html' %}
+
+{% block title %} Esta es la pagina main {% endblock %}
+
+{% block main %}
+
+    <h5> Uso de la etiqueta block</h5>
+    <ul>
+        {% for valor in lista %}
+            <li>
+                <h6>valor</h6>
+            </li>
+        {% endfor %}
+        </ul>   
+    <p> Estamos haciendo un parrafo de prueba heredando de inicio.html</p>
+
+{% endblock %}
+
+{% block piepagina %}
+    {{ variable }}
+
+{% endblock %}
