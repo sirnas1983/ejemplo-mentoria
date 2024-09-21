@@ -9,8 +9,7 @@ def main(request):
     contexto = {'variable' : "esta es mi variable"}
     lista = {}
     for i in range(10):
-        lista[i] = str(i) + "variable" 
-        print(str(i) + "variable")
+        lista[f'{i}'] = f'{i} - variable' 
     print(lista)
     contexto['lista'] = lista
     return render(request, 'main.html', contexto)

@@ -6,17 +6,16 @@
 
     <h5> Uso de la etiqueta block</h5>
     <ul>
-        {% for valor in lista %}
+        {% for k,v in lista.items %}
             <li>
-                <h6>valor</h6>
+                <h6>{{k}}: {{v}}</h6>
             </li>
         {% endfor %}
-        </ul>   
+    </ul>   
     <p> Estamos haciendo un parrafo de prueba heredando de inicio.html</p>
 
 {% endblock %}
 
 {% block piepagina %}
     {{ variable }}
-
 {% endblock %}
