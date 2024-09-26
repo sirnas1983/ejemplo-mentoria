@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block titulo %} Crear tarea {% endblock %}
+{% block contenido %}
+    <div class="container mt-4">
+        <h1>{% if tarea.pk %}Editar Tarea{% else %}Crear Nueva Tarea{% endif %}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a href="{% url 'tarea-list' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+
+    <script>
+        $(function() {
+            $("#id_fecha_vencimiento").datepicker({
+                dateFormat: "dd/mm/yy",
+                onSelect: function(dateText) {
+                    var time = prompt("Ingrese la hora en HH:MM");
+                    if (time) {
+                        $(this).val(dateText + " " + time);
+                    }
+                }
+            });
+        });
+    </script>
+    
+{% endblock %}
