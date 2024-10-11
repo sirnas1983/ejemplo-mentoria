@@ -1,2 +1,10 @@
 {% extends 'base.html' %}
 
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'posts:editar' pk=post.pk %}">{{post.id}} - {{ post.titulo }} </a>
+        </li>
+    {% endfor %}
+</ul>
+{% url 'posts:crear' %}
