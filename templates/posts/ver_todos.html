@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block principal%}
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'posts:editar' pk=post.pk %}">{{post.id}} - {{ post.titulo }} </a>
+        </li>
+    {% endfor %}
+</ul>
+
+        <a href="{% url 'posts:crear' %}?next={% url 'request.get_full_path' %}" {% if not request.user.is_authenticated %}disabled{% endif %}>
+        Crear Post
+        </a>
+
+{% endblock %}
+
